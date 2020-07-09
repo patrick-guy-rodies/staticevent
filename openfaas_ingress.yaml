@@ -1,26 +1,27 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: echo-ingress
+  name: openfaas-ingress
+  namespace: openfaas
   annotations:
     kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   tls:
   - hosts:
-    - echo1.pgr095.tk
-    - echo2.pgr095.tk
+    - echo3.pgr095.tk
+    - openfaas.pgr095.tk
     secretName: echo-tls
   rules:
-  - host: echo1.pgr095.tk
+  - host: echo3.pgr095.tk
     http:
       paths:
       - backend:
-          serviceName: echo1
+          serviceName: echo3
           servicePort: 80
-  - host: echo2.pgr095.tk
+  - host: openfaas.pgr095.tk
     http:
       paths:
       - backend:
-          serviceName: echo2
-          servicePort: 80
+          serviceName: gateway
+          servicePort: 8080
