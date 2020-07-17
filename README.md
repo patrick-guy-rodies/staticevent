@@ -1,14 +1,11 @@
 # Hugo Static Templates with OpenFaaS
 
-This repo contains Yaml file to install OpenFaaS with TLS. Certificate is from LetsEncrypt, Domain used is from freenom and DNS from Azure
+This repo contains the Hugo templates and components to run a static website using openfaas
 
 ## Key features
 
-* LetsEncrypt certificate
-* DNS Azure service
-* Domain name from Free service called freenom
-* No use of Helm - :-)
-
+* Driven static web pages from FaaS
+* Templates scaffolded application
 
 ## Possible Improvements
 * Disaster Recovery
@@ -16,11 +13,27 @@ This repo contains Yaml file to install OpenFaaS with TLS. Certificate is from L
 
 ## Pre-requisites
 
-1. A Kubernetes 1.10+ cluster with role-based access control (RBAC) enabled
+1. faas-cli
+1. OpenFaaS with TLS on K8's -> check [patrickguyrodies/openfaas](https://patrickguyrodies@bitbucket.org/patrickguyrodies/openfaas.git)
+1. Domain name and TLS certificate
+1. Azure Container Registry - We attached the ACR inside our cluster
+                $ az aks update -n <cluster_name> -g <resource_group> --attach-acr <registry_name>
 
-1. The kubectl command-line tool installed on your local machine and configured to connect to your cluster. You can read more about installing kubectl in the official documentation.
+### Clone repo and get faas template
+Clone the [patrickguyrodies/staticevent](bitbucket.org:patrickguyrodies/staticevent.git) repo and cd into the root of the repo.
+>Either create a new branch such as git checkout -b <new-branch> or use the development branch
 
-1. The wget command-line utility installed on your local machine. You can install wget using the package manager built into your operating system.
-Once you have these components set up, you’re ready to begin with this guide.
+1. Pull in my †emplate using its URL
 
-### Creating Domain name
+                $ faas template pull https://github.com/matipan/openfaas-hugo-template
+
+1. Now create a Hugo site called `pgr095`
+
+                $ faas new --lang hugo pgr095
+
+This will create a folder called pgr095 where we will place the content for the site along with its configuration and any themes we may want.
+
+The pgr095.yml file is called a stack file and can be used to configure the deployment on OpenFaaS.
+
+The following steps are based upon the Hugo [quick-start guide](https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site):
+
