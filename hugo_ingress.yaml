@@ -1,0 +1,16 @@
+apiVersion: openfaas.com/v1alpha2
+kind: FunctionIngress
+metadata:
+  name: hugo-www-tls
+  namespace: openfaas
+spec:
+  domain: "hugo.pgr095.tk"
+  function: "pgr095"
+  ingressType: "nginx"
+  bypassGateway: false
+  path: "/"
+  tls:
+    enabled: true
+    issuerRef:
+      name: "letsencrypt-prod"
+      kind: "ClusterIssuer"

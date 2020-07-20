@@ -1,0 +1,6 @@
+[submodule "pgr095/themes/ananke"]
+	path = pgr095/themes/ananke
+	url = https://github.com/budparr/gohugo-theme-ananke.git
+[submodule "ingress-operator"]
+	path = ingress-operator
+	url = https://github.com/openfaas-incubator/ingress-operator.git

@@ -1,0 +1,4 @@
+baseURL = "https://hugo.pgr095.tk//"
+languageCode = "en-uk"
+title = "OpenFaaS Hugo Tutorial v1.0"
+theme = "ananke"

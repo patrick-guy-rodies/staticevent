@@ -1,10 +1,11 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://127.0.0.1:8080
+  gateway: https://openfaas.pgr095.tk #To be changed to your gateway
 functions:
   pgr095:
     lang: hugo
     handler: ./pgr095
-    image: pgr095:latest
+    image: pgr095.azurecr.io/pgr095-hugo:latest #To be change to your repo
+
 
