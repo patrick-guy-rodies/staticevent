@@ -7,8 +7,7 @@ spec:
   domain: "hugo.pgr095.tk"
   function: "pgr095"
   ingressType: "nginx"
-  bypassGateway: false
-  path: "/"
+  path: /
   tls:
     enabled: true
     issuerRef:

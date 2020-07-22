@@ -1,4 +1,4 @@
-baseURL = "https://hugo.pgr095.tk//"
+baseURL = "."
 languageCode = "en-uk"
-title = "OpenFaaS Hugo Tutorial v1.0"
+title = "OpenFaaS Hugo Tutorial"
 theme = "ananke"

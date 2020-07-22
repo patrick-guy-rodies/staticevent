@@ -54,7 +54,7 @@ The following steps are based upon the Hugo [quick-start guide](https://gohugo.i
 
 When you are developing new content you’ll probably want to see what it looks like before deploying it. To do this, you can use the hugo server command inside the function’s directory:
 
-                $hugo server
+                $ hugo server
                 Watching for changes in /home/capitan/src/gitlab.com/matipan/openfaas-hugo-blog/blog/{archetypes,content,static}
                 Watching for config changes in /home/capitan/src/gitlab.com/matipan/openfaas-hugo-blog/blog/config.toml
                 Environment: "development"
